@@ -2,3 +2,7 @@ server:
   port: 8080
   ssl:
     enabled: false
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/json,text/html,text/plain
