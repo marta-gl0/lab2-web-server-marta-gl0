@@ -11,7 +11,7 @@ build
 .idea
 .DS_Store
 
-src/main/resources/application.yml
+src/main/resources/application-secrets.properties
 src/main/resources/localhost.p12
 localhost.crt
 localhost.key
