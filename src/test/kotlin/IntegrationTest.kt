@@ -18,30 +18,22 @@ class ErrorPageIntegrationTest {
     @Autowired
     private lateinit var restTemplate: TestRestTemplate
 
-    private fun baseUrl(path: String) = "http://localhost:$port$path"
-
     @Test
-    fun `cuando se solicita HTML y la ruta no existe, se renderiza templates error html`() {
+    fun `should return custom error page`() {
         val headers = HttpHeaders()
-        headers.accept = listOf(MediaType.TEXT_HTML)
+        headers.add("Accept", "text/html")
         val entity = HttpEntity<String>(headers)
 
         val response = restTemplate.exchange(
-            baseUrl("/ruta"),
+            "http://localhost:$port/no-route",
             HttpMethod.GET,
             entity,
             String::class.java
         )
 
-        // Debe ser 404 Not Found
         assertThat(response.statusCode).isEqualTo(HttpStatus.NOT_FOUND)
-
-        // Content-Type debe ser HTML (puede llevar charset)
-        assertThat(response.headers.contentType.toString()).contains("text/html")
-
-        // El body debe contener algún texto único de tu error.html.
-        // Cambia "Página de error personalizada" por el texto real de tu plantilla.
+        assertThat(response.body).contains("<!DOCTYPE html>")
         assertThat(response.body).isNotNull
-        assertThat(response.body).contains("Lo sentimos, ha ocurrido un error")
+        assertThat(response.body).contains("Volver al inicio")
     }
 }

@@ -11,9 +11,7 @@ build
 .idea
 .DS_Store
 
-src/test/kotlin/MVCTests.kt
 src/main/resources/application.yml
 src/main/resources/localhost.p12
-src/main/kotlin/es/unizar/webeng/lab2/TimeComponent.kt
 localhost.crt
 localhost.key
