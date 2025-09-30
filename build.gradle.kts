@@ -23,7 +23,7 @@ dependencies {
     implementation(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.starter.thymeleaf)
     implementation(libs.jackson.module.kotlin)
-
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
     testImplementation(libs.spring.boot.starter.test)
 }
 
