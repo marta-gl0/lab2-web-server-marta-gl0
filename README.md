@@ -24,9 +24,10 @@ A minimal Spring Boot + Kotlin starter for Lab 2. Complete the tasks in `docs/GU
 ```
 
 ## Project structure
-- `src/main/kotlin/es/unizar/webeng/lab2`: application code (`Application.kt`)
-- `src/main/resources/templates`: Thymeleaf templates (e.g., `error.html`)
-- `src/main/resources`: configuration (e.g., `application.yml`, `localhost.p12`)
+- `src/main/kotlin/es/unizar/webeng/lab2`: application code (`Application.kt`, `OpenAPIConfig.kt`, `TestController.kt`, `TimeComponent.kt`)
+- `src/test/kotlin`: tests code (`CompressionIntegrationTest.kt`, `ErrorPageIntegration.kt`, `MVCTests.kt`, `SwaggerIntegrationTest.kt`) and specific configuration for them (`application.yml`)
+- `src/main/resources/templates`: Thymeleaf templates (`error.html`)
+- `src/main/resources`: configuration (`application.yml`)
 - `docs/GUIDE.md`: assignment instructions
 
 ## Assignment tasks
